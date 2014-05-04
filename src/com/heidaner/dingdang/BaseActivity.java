@@ -7,7 +7,7 @@
  * @date:   2014-4-18 下午3:03:41   
  * @version V1.0     
  */
-package com.heidaner.dingdong;
+package com.heidaner.dingdang;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,7 +16,6 @@ import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;

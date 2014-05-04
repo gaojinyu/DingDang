@@ -1,22 +1,25 @@
-package com.heidaner.dingdong;
+package com.heidaner.dingdang;
 
-import com.heidaner.dingdong.eyetoeye.EyeToEyeActivity;
-import com.heidaner.dingdong.me.MeActivity;
-import com.heidaner.dingdong.nearby.NearbyActivity;
-import com.heidaner.dingdong.plaza.PlazaActivity;
+import com.heidaner.dingdang.eyetoeye.EyeToEyeActivity;
+import com.heidaner.dingdang.me.MeActivity;
+import com.heidaner.dingdang.nearby.NearbyActivity;
+import com.heidaner.dingdang.plaza.PlazaActivity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.TabHost.TabSpec;
 
-public class HomeActivity extends Fragment implements OnCheckedChangeListener {
+public class HomeActivity extends Fragment implements OnCheckedChangeListener,
+		OnClickListener {
 	private FragmentTabHost mTabHost;
 	private RadioGroup mTabRg;
 	private final Class[] fragments = { EyeToEyeActivity.class,
@@ -24,7 +27,9 @@ public class HomeActivity extends Fragment implements OnCheckedChangeListener {
 	private TextView mTitleTextView;
 	private View view;
 	private MainActivity ma;
+	private ImageView mLeftIcon;
 
+	// /
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -44,6 +49,9 @@ public class HomeActivity extends Fragment implements OnCheckedChangeListener {
 		// TODO Auto-generated method stub
 		ma = (MainActivity) getActivity();
 		mTitleTextView = (TextView) ma.findViewById(R.id.tv_title);
+		mLeftIcon = (ImageView) ma.findViewById(R.id.iv_left_icon);
+		mLeftIcon.setImageResource(R.drawable.ic_launcher);
+		mLeftIcon.setOnClickListener(this);
 		mTabHost = (FragmentTabHost) view.findViewById(android.R.id.tabhost);
 		mTabHost.setup(ma.getApplicationContext(), getChildFragmentManager(),
 				R.id.realtabcontent);
@@ -81,6 +89,30 @@ public class HomeActivity extends Fragment implements OnCheckedChangeListener {
 		case R.id.tab_rb_4:
 			mTabHost.setCurrentTab(4);
 			mTitleTextView.setText("个人中心");
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	/**
+	 * <p>
+	 * Title: onClick
+	 * </p>
+	 * <p>
+	 * Description:
+	 * </p>
+	 * 
+	 * @param v
+	 * @see android.view.View.OnClickListener#onClick(android.view.View)
+	 */
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.iv_left_icon:
+			ma.toggle();
 			break;
 
 		default:

@@ -1,4 +1,4 @@
-package com.heidaner.dingdong.plaza;
+package com.heidaner.dingdang.plaza;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,7 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.heidaner.dingdong.R;
+import com.heidaner.dingdang.R;
+
 
 /**
  * @ClassName: PlazaActivity

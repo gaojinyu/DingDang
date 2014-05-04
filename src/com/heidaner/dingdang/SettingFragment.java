@@ -1,6 +1,6 @@
-package com.heidaner.dingdong;
+package com.heidaner.dingdang;
 
-import com.heidaner.dingdong.ddlogin.DDLoginActivity;
+import com.heidaner.dingdang.ddlogin.DDLoginActivity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
