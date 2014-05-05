@@ -1,9 +1,10 @@
 package com.heidaner.dingdang;
 
-import com.heidaner.dingdang.eyetoeye.EyeToEyeActivity;
-import com.heidaner.dingdang.me.MeActivity;
+import com.heidaner.dingdang.chat.ChaActivity;
+import com.heidaner.dingdang.dynamic.DynamicActivity;
+import com.heidaner.dingdang.friend.FriendActivity;
+import com.heidaner.dingdang.more.MoreActivity;
 import com.heidaner.dingdang.nearby.NearbyActivity;
-import com.heidaner.dingdang.plaza.PlazaActivity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,12 +23,15 @@ public class HomeActivity extends Fragment implements OnCheckedChangeListener,
 		OnClickListener {
 	private FragmentTabHost mTabHost;
 	private RadioGroup mTabRg;
-	private final Class[] fragments = { EyeToEyeActivity.class,
-			PlazaActivity.class, NearbyActivity.class, MeActivity.class };
+	private final Class[] fragments = { NearbyActivity.class,
+			ChaActivity.class, DynamicActivity.class, FriendActivity.class,
+			MoreActivity.class };
 	private TextView mTitleTextView;
 	private View view;
 	private MainActivity ma;
 	private ImageView mLeftIcon;
+
+	
 
 	// /
 	@Override
@@ -65,8 +69,7 @@ public class HomeActivity extends Fragment implements OnCheckedChangeListener,
 		}
 		mTabRg = (RadioGroup) view.findViewById(R.id.tab_rg_menu);
 		mTabRg.setOnCheckedChangeListener(this);
-		mTabHost.setCurrentTab(0);
-		mTitleTextView.setText("心有灵犀");
+		swichTab(0,"附近");
 
 	}
 
@@ -75,38 +78,25 @@ public class HomeActivity extends Fragment implements OnCheckedChangeListener,
 		// TODO Auto-generated method stub
 		switch (checkedId) {
 		case R.id.tab_rb_1:
-			mTabHost.setCurrentTab(1);
-			mTitleTextView.setText("心有灵犀");
+			swichTab(0, "附近");
 			break;
 		case R.id.tab_rb_2:
-			mTabHost.setCurrentTab(2);
-			mTitleTextView.setText("擦肩而过");
+			swichTab(1, "对话");
 			break;
 		case R.id.tab_rb_3:
-			mTabHost.setCurrentTab(3);
-			mTitleTextView.setText("万里挑一");
+			swichTab(2, "动态");
 			break;
 		case R.id.tab_rb_4:
-			mTabHost.setCurrentTab(4);
-			mTitleTextView.setText("个人中心");
+			swichTab(3, "好友");
 			break;
-
+		case R.id.tab_rb_5:
+			swichTab(4, "更多");
+			break;
 		default:
 			break;
 		}
 	}
 
-	/**
-	 * <p>
-	 * Title: onClick
-	 * </p>
-	 * <p>
-	 * Description:
-	 * </p>
-	 * 
-	 * @param v
-	 * @see android.view.View.OnClickListener#onClick(android.view.View)
-	 */
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -119,5 +109,19 @@ public class HomeActivity extends Fragment implements OnCheckedChangeListener,
 			break;
 		}
 	}
+
+	/**   
+	 * @Title: swichTab   
+	 * @Description: TODO(swich tab )   
+	 * @param: @param Num	(tab num)
+	 * @param: @param text (tab title)     
+	 * @return: void      
+	 * @throws   
+	 */  
+	public void swichTab(int num, String text) {
+		mTabHost.setCurrentTab(num);
+		mTitleTextView.setText(text);
+	}
+
 
 }

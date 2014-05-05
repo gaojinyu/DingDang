@@ -1,5 +1,6 @@
 package com.heidaner.dingdang.ddlogin;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,20 +21,21 @@ import com.heidaner.dingdang.HomeActivity;
 import com.heidaner.dingdang.MainActivity;
 import com.heidaner.dingdang.R;
 import com.heidaner.dingdang.base.DDProgressDialog;
+import com.heidaner.dingdang.friend.FriendActivity;
 
 public class DDLoginActivity extends Fragment implements OnClickListener {
 
 	private View view;
 	private MainActivity ma;
 	private ImageView mLeftIcon;
-	private Fragment mFragment;
+	private HomeActivity mFragment;
 	private TextView mTitleTextView;
 	private EditText dd_login_user_edit, dd_login_psw_edit;
 	private Button dd_login_login_btn;
 	private Context context;
 	private DDProgressDialog ddProgressDialog;
 
-	private Handler ddLoginHandler=new Handler(){
+	private Handler ddLoginHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
 			// TODO Auto-generated method stub
@@ -41,18 +43,22 @@ public class DDLoginActivity extends Fragment implements OnClickListener {
 			ddProgressDialog.dismiss();
 			switch (msg.what) {
 			case 1:
-				Toast.makeText(context, "login sucess", Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, "login sucess", Toast.LENGTH_SHORT)
+						.show();
+				mFragment = new HomeActivity();
+				switchFragment(mFragment);
 				break;
 			case 2:
-				Toast.makeText(context, "login failure", Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, "login failure", Toast.LENGTH_SHORT)
+						.show();
 				break;
 			default:
 				break;
 			}
-			
+
 		}
 	};
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -70,14 +76,13 @@ public class DDLoginActivity extends Fragment implements OnClickListener {
 		return view;
 	}
 
-	
-	/**   
-	 * @Title: initView   
-	 * @Description: TODO(Initialize the view)   
-	 * @param:       
-	 * @return: void      
-	 * @throws   
-	 */  
+	/**
+	 * @Title: initView
+	 * @Description: TODO(Initialize the view)
+	 * @param:
+	 * @return: void
+	 * @throws
+	 */
 	private void initView() {
 		// TODO Auto-generated method stub
 		ma = (MainActivity) getActivity();
@@ -116,39 +121,44 @@ public class DDLoginActivity extends Fragment implements OnClickListener {
 	 * @return: void
 	 * @throws
 	 */
+	@SuppressLint("NewApi")
 	private void ddLogin() {
 		// TODO Auto-generated method stub
-		final String dd_login_user_str=String.valueOf(dd_login_user_edit.getText()).trim();
-		final String dd_login_psw_str=String.valueOf(dd_login_psw_edit.getText()).trim();
-		if(dd_login_user_str==""||dd_login_user_str==null){
-			Toast.makeText(context, "User name cannot be empty", Toast.LENGTH_SHORT).show();
-		}else if(dd_login_psw_str==""||dd_login_psw_str==null){
-			Toast.makeText(context, "passworld cannot be empty", Toast.LENGTH_SHORT).show();
-		}else{
+		final String dd_login_user_str = String.valueOf(
+				dd_login_user_edit.getText()).trim();
+		final String dd_login_psw_str = String.valueOf(
+				dd_login_psw_edit.getText()).trim();
+		if (dd_login_user_str.isEmpty()) {
+			Toast.makeText(context, "User name cannot be empty",
+					Toast.LENGTH_SHORT).show();
+		} else if (dd_login_psw_str.isEmpty()) {
+			Toast.makeText(context, "passworld cannot be empty",
+					Toast.LENGTH_SHORT).show();
+		} else {
 			ddProgressDialog.show();
-			new Thread(){
+			new Thread() {
 
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-					
-					DDlogin login=new DDlogin(dd_login_user_str, dd_login_psw_str);
-					if(login.login()){
-						Message msg=new Message();
-						msg.what=1;
+
+					DDlogin login = new DDlogin(dd_login_user_str,
+							dd_login_psw_str);
+					if (login.login()) {
+						Message msg = new Message();
+						msg.what = 1;
 						ddLoginHandler.sendMessage(msg);
-					}else{
-						Message msg=new Message();
-						msg.what=2;
+					} else {
+						Message msg = new Message();
+						msg.what = 2;
 						ddLoginHandler.sendMessage(msg);
 					}
-					
+
 				}
-				
+
 			}.start();
 		}
-		
-		
+
 	}
 
 	private void switchFragment(Fragment mFragment2) {

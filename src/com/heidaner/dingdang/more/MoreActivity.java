@@ -1,15 +1,15 @@
 /**  
  * All rights Reserved, Designed By Android_Robot   
- * @Title:  EyeToEyeActivity.java   
- * @Package com.heidaner.dingdong.eyetoeye   
+ * @Title:  MoreActivity.java   
+ * @Package com.heidan.dingdang.more   
  * @Description:    TODO(用一句话描述该文件做什么)   
  * @author: gjy     
- * @date:   2014-4-21 下午3:38:09   
+ * @date:   2014-5-6 下午2:22:41   
  * @version V1.0     
  */  
-package com.heidaner.dingdang.eyetoeye;
+package com.heidaner.dingdang.more;
 
-
+import com.heidaner.dingdang.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,18 +17,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.heidaner.dingdang.R;
-
 /**   
- * @ClassName:  EyeToEyeActivity   
- * @Description:TODO(心犀类)   
+ * @ClassName:  MoreActivity   
+ * @Description:TODO(这里用一句话描述这个类的作用)   
  * @author: gjy  
- * @date:   2014-4-21 下午3:38:09   
+ * @date:   2014-5-6 下午2:22:41   
  *      
  */
 
-public class EyeToEyeActivity extends Fragment{
-
+public class MoreActivity extends Fragment{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -40,8 +37,6 @@ public class EyeToEyeActivity extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		return inflater.inflate(R.layout.activity_eyetoeye, container,false);
+		return inflater.inflate(R.layout.activity_more, container,false);
 	}
-
-	
 }

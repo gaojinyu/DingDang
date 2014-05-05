@@ -22,25 +22,30 @@
             style="@style/tab_rb_style"
             android:checked="true"
             android:drawableTop="@drawable/tab_selector_weixing"
-            android:text="心犀" />
+            android:text="附近" />
 
         <RadioButton
             android:id="@+id/tab_rb_2"
             style="@style/tab_rb_style"
             android:drawableTop="@drawable/tab_selector_tongxunlu"
-            android:text="擦肩" />
+            android:text="对话" />
 
         <RadioButton
             android:id="@+id/tab_rb_3"
             style="@style/tab_rb_style"
             android:drawableTop="@drawable/tab_selector_faxian"
-            android:text="广场" />
+            android:text="动态" />
 
         <RadioButton
             android:id="@+id/tab_rb_4"
             style="@style/tab_rb_style"
             android:drawableTop="@drawable/tab_selector_wo"
-            android:text="我" />
+            android:text="好友" />
+         <RadioButton
+            android:id="@+id/tab_rb_5"
+            style="@style/tab_rb_style"
+            android:drawableTop="@drawable/tab_selector_wo"
+            android:text="更多" />
     </RadioGroup>
 
     <android.support.v4.app.FragmentTabHost

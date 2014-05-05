@@ -1,13 +1,14 @@
 /**  
  * All rights Reserved, Designed By Android_Robot   
- * @Title:  MeActivity.java   
- * @Package com.heidaner.dingdong.me   
+ * @Title:  EyeToEyeActivity.java   
+ * @Package com.heidaner.dingdong.eyetoeye   
  * @Description:    TODO(用一句话描述该文件做什么)   
  * @author: gjy     
- * @date:   2014-4-21 下午3:45:30   
+ * @date:   2014-4-21 下午3:38:09   
  * @version V1.0     
- */
-package com.heidaner.dingdang.me;
+ */  
+package com.heidaner.dingdang.chat;
+
 
 
 import android.os.Bundle;
@@ -18,27 +19,29 @@ import android.view.ViewGroup;
 
 import com.heidaner.dingdang.R;
 
-/**
- * @ClassName: MeActivity
- * @Description:TODO("我"类)
- * @author: gjy
- * @date: 2014-4-21 下午3:45:30
- * 
+/**   
+ * @ClassName:  EyeToEyeActivity   
+ * @Description:TODO(心犀类)   
+ * @author: gjy  
+ * @date:   2014-4-21 下午3:38:09   
+ *      
  */
 
-public class MeActivity extends Fragment {
+public class ChaActivity extends Fragment{
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		return inflater.inflate(R.layout.activity_me, container, false);
+		return inflater.inflate(R.layout.activity_chat, container,false);
 	}
 
+	
 }
