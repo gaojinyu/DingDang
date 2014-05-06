@@ -7,7 +7,9 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -15,24 +17,31 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.heidaner.dingdang.MainActivity"
-            android:label="@string/app_name"
-            >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name="com.heidaner.dingdang.dynamic.DynamicActivity"></activity>
-        <activity android:name="com.heidaner.dingdang.nearby.NearbyActivity"></activity>
-        <activity android:name="com.heidaner.dingdang.friend.FriendActivity"></activity>
-        <activity android:name="com.heidaner.dingdang.chat.ChaActivity"></activity>
-        <activity android:name="com.heidaner.dingdang.more.MoreActivity"></activity>
-        <activity android:name="com.heidaner.dingdang.HomeActivity"></activity>
-        <activity android:name="com.heidaner.dingdang.ddlogin.DDLoginActivity"></activity>
-        <activity android:name="com.heidaner.dingdang.BaseActivity"></activity>
-          <activity android:name="com.heidaner.dingdang.SettingFragment"></activity>
+        <activity android:name="com.heidaner.dingdang.friend.FriendActivity" >
+        </activity>
+        <activity android:name="com.heidaner.dingdang.chat.ChaActivity" >
+        </activity>
+        <activity android:name="com.heidaner.dingdang.more.MoreActivity" >
+        </activity>
+        <activity android:name="com.heidaner.dingdang.nearby.NearbyActivity" >
+        </activity>
+        <activity android:name="com.heidaner.dingdang.HomeActivity" >
+        </activity>
+        <activity android:name="com.heidaner.dingdang.ddlogin.DDLoginActivity" >
+        </activity>
+        <activity android:name="com.heidaner.dingdang.BaseActivity" >
+        </activity>
+        <activity android:name="com.heidaner.dingdang.SettingFragment" >
+        </activity>
+        <activity android:name="com.heidaner.dingdang.dynamic.DynamicActivity" >
+        </activity>
     </application>
 
 </manifest>
