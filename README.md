@@ -1,1 +1,1 @@
-andoid appddddd
+andoid app

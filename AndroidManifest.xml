@@ -24,11 +24,10 @@
             </intent-filter>
 
         </activity>
-        <activity android:name="com.heidaner.dingdang.dynamic.DynamicActivity"></activity>
+        <activity android:name="com.heidaner.dingdang.me.MeActivity"></activity>
         <activity android:name="com.heidaner.dingdang.nearby.NearbyActivity"></activity>
-        <activity android:name="com.heidaner.dingdang.friend.FriendActivity"></activity>
-        <activity android:name="com.heidaner.dingdang.chat.ChaActivity"></activity>
-        <activity android:name="com.heidaner.dingdang.more.MoreActivity"></activity>
+        <activity android:name="com.heidaner.dingdang.plaza.PlazaActivity"></activity>
+        <activity android:name="com.heidaner.dingdang.eyetoeye.EyeToEyeActivity"></activity>
         <activity android:name="com.heidaner.dingdang.HomeActivity"></activity>
         <activity android:name="com.heidaner.dingdang.ddlogin.DDLoginActivity"></activity>
         <activity android:name="com.heidaner.dingdang.BaseActivity"></activity>

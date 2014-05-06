@@ -33,7 +33,7 @@ public class HomeActivity extends Fragment implements OnCheckedChangeListener,
 
 	
 
-	// /
+	// ///
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
