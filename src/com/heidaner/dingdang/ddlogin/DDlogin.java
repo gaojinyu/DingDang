@@ -12,6 +12,7 @@ package com.heidaner.dingdang.ddlogin;
 import org.jivesoftware.smack.Connection;
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.ConnectionConfiguration.SecurityMode;
+import org.jivesoftware.smack.Roster;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 
@@ -27,12 +28,20 @@ import android.util.Log;
 
 public class DDlogin {
 
+
 	private String user;	
 	private String psw;
 	ConnectionConfiguration config;
 	Connection connection;
+	public static Roster roster;
+
 	public static final String IP="192.168.200.80";	//openfire server ip address
 	public static final String SERVICENAME="192.168.200.80";	//opfenfire servier name
+
+	public DDlogin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	/**   
 	 * @Title:  DDlogin   
 	 * @Description:    TODO(constructor)   
@@ -67,6 +76,7 @@ public class DDlogin {
 			connection.login(user, psw);
 			System.out.println(connection.getUser());
 			Log.d("im", "success");
+			roster=connection.getRoster();
 			return true;
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
@@ -79,5 +89,21 @@ public class DDlogin {
 		}
 	}
 
-	
+	/**  
+	 * @Title:  getConnection <BR>  
+	 * @Description: please write your description <BR>  
+	 * @return: Connection <BR>  
+	 */
+	public Connection getConnection() {
+		return connection;
+	}
+
+	/**  
+	 * @Title:  setConnection <BR>  
+	 * @Description: please write your description <BR>  
+	 * @return: Connection <BR>  
+	 */
+	public void setConnection(Connection connection) {
+		this.connection = connection;
+	}
 }
