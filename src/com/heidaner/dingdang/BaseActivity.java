@@ -28,7 +28,7 @@ import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
  * @Description:TODO(这里用一句话描述这个类的作用)
  * @author: gjy
  * @date: 2014-4-18 下午3:03:41
- * 
+ * //
  */
 
 public class BaseActivity extends SlidingFragmentActivity implements
